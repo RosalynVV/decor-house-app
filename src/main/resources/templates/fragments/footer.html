@@ -1,0 +1,50 @@
+<!-- fragments/footer.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer class="footer" th:fragment="footer" style="background-color: #000; color: #fff; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img th:src="@{/images/decorhouse-logo.png}" alt="Logo" width="100">
+                <p>Gracias por preferirnos, estamos contentos de poder tener clientes como uds. disfrute de cada compra y experiencia única, y también nos puedes seguir en nuestras redes sociales.</p>
+                <div>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h5 style="color: #ff0040;">Información De Contactos</h5>
+                <p><i class="fas fa-phone"></i> +51 987659324</p>
+                <p><i class="fas fa-envelope"></i> decorhouseshop@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> numbai, tarapoto 4251</p>
+            </div>
+            <div class="col-md-2">
+                <h5 style="color: #ff0040;">Enlaces Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" style="color: #00ff9d;">Inicio</a></li>
+                    <li><a href="#" style="color: #00ff9d;">Tienda</a></li>
+                    <li><a href="#" style="color: #00ff9d;">Servicios</a></li>
+                    <li><a href="#" style="color: #00ff9d;">Blog</a></li>
+                    <li><a href="#" style="color: #00ff9d;">Nosotros</a></li>
+                    <li><a href="#" style="color: #00ff9d;">Equipo</a></li>
+                    <li><a href="#" style="color: #00ff9d;">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 style="color: #ff0040;">Boletín Informativo</h5>
+                <p>Ingrese su correo para recibir las nuevas actualizaciones</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Su correo electrónico">
+                    </div>
+                    <button type="submit" class="btn btn-enviar" style="background-color: #ff0040; color: white;">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

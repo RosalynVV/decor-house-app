@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Decor House</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        /* SECCIÓN 1: BIENVENIDA */
+        .hero {
+            background-image: url('/images/img.png');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 60px;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        /* SECCIÓN 2: SERVICIOS */
+        .services-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .services-section h2 span {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .service-card {
+            width: 300px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .service-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .service-title {
+            color: #fd7e14;
+            margin-top: 15px;
+        }
+        .btn-leer-mas {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            margin-top: 15px;
+        }
+        .rating {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+
+        /* SECCIÓN 3: CTA */
+        .cta-section {
+            background-color: #343a40;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 36px;
+        }
+        .cta-section p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .cta-section a {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<!-- SECCIÓN 1: BIENVENIDA -->
+<section class="hero">
+
+</section>
+
+<!-- SECCIÓN 2: SERVICIOS -->
+<section class="services-section">
+    <h2>
+        <span style="color: #007bff;">NUESTROS</span>
+        <span style="background-color: #28a745; color: white; padding: 5px 10px; border-radius: 5px;">SERVICIOS</span>
+    </h2>
+    <div class="row">
+        <div class="service-card">
+            <img th:src="@{/images/personalizacion.jpg}" alt="Personalización">
+            <h4 class="service-title">PERSONALIZACIÓN</h4>
+            <p>Personaliza tus productos según tus gustos y estilos.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <button class="btn btn-leer-mas">LEER MÁS</button>
+        </div>
+        <div class="service-card">
+            <img th:src="@{/images/asesoramiento.jpg}" alt="Asesoramiento de Diseño">
+            <h4 class="service-title">ASESORAMIENTO DE DISEÑO</h4>
+            <p>Asesoramiento personalizado para crear el ambiente perfecto.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <button class="btn btn-leer-mas">LEER MÁS</button>
+        </div>
+        <div class="service-card">
+            <img th:src="@{/images/ecommerce.jpg}" alt="Comercio Electrónico">
+            <h4 class="service-title">COMERCIO ELECTRÓNICO</h4>
+            <p>Compra de forma rápida y segura en nuestra plataforma en línea.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <button class="btn btn-leer-mas">LEER MÁS</button>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 3: LLAMADO A LA ACCIÓN -->
+<section class="cta-section">
+    <h2>¿Listo para transformar tu hogar?</h2>
+    <p>Explora nuestros productos y encuentra el diseño que encaje con tu estilo.</p>
+    <a th:href="@{/products}">Ver Catálogo</a>
+</section>
+
+<!-- FOOTER -->
+<div th:replace="fragments/footer :: footer"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
